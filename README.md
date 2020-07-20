@@ -1,6 +1,5 @@
 # Test Tasks
 
-
 Requirements:
 
 - Stack - React with app state management library (Redux, MobX or Recoil), TypeScript. Functional style is preferable. No UI frameworks, or style libraries, CSS/SCSS only.
@@ -8,15 +7,21 @@ Requirements:
 
 ## Task 1 - Card View
 
+![image](https://github.com/d-mv/test-react/blob/master/screenshots/Task%201.png?raw=true)
+
 Use fake data  to create responsive card view with header, sidebar and toolbar.
 
 On the toolbar, the only button that should work is 'Add New'. Clicking on the button should show a modal window with simple form (design of your choice) to add a card to this list. Clicking on 'Info' link on the card redirects to empty page 'Info', clicking on the card, redirects to a simple product page of your design with card details present. Clicking on the 'burger' button next to 'Add New' reidrects to page with Task 2.
 
 ## Task 2 - List View
 
+![image](https://github.com/d-mv/test-react/blob/master/screenshots/Task%202.png?raw=true)
+
 Similar to the frist task, produce the list view for the same data. On clicking on the line, the effect should be as per provided image below. Clicking on icon __i__ redirects to product page, mentioned before.
 
-### Task 3 - Refactor
+![image](https://github.com/d-mv/test-react/blob/master/screenshots/Task%202%20-%20selected%20line%20detail.png?raw=true)
+
+## Task 3 - Refactor
 
 Refactor below example to React functional component with hooks and
 TypeScript:
@@ -43,7 +48,7 @@ class WeatherDisplay extends Component {
       weatherData: null
     };
   }
-  
+
   componentWillMount() {
     const zip = this.props.zip;
     const URL = "http://api.openweathermap.org/data/2.5/weather?q=" +
@@ -53,11 +58,11 @@ class WeatherDisplay extends Component {
       this.setState({ weatherData: json });
     });
   }
-  
+
   componentWillUnmount() {
     this.setState({ weatherData:null })
   }
-  
+
   render() {
     const weatherData = this.state.weatherData;
     if (!weatherData) return <div>Loading</div>;
